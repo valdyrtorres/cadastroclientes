@@ -71,7 +71,7 @@ public class ClienteController {
 				 consumes = {"application/json", "application/xml", "application/x-yaml" })
 	public ClienteVO create(@RequestBody ClienteVO clienteVO) {
 		ClienteVO cliVo = clienteService.create(clienteVO);
-		cliVo.add(linkTo(methodOn(ClienteController.class).findById(clienteVO.getId())).withSelfRel());
+		cliVo.add(linkTo(methodOn(ClienteController.class).findById(cliVo.getId())).withSelfRel());
 		return cliVo;
 	}
 	

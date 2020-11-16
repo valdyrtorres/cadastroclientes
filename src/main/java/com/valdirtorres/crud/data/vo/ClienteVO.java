@@ -3,6 +3,7 @@ package com.valdirtorres.crud.data.vo;
 import java.io.Serializable;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.hateoas.RepresentationModel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -21,8 +22,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-public class ClienteVO implements Serializable {
+@EqualsAndHashCode(callSuper = false)
+public class ClienteVO extends RepresentationModel<ClienteVO> implements Serializable {
 	
 	private static final long serialVersionUID = -1379001966879414523L;
 	

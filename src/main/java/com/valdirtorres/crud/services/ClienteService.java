@@ -21,7 +21,7 @@ public class ClienteService {
 		this.clienteRepository = clienteRepository;
 	}
 	
-	public ClienteVO Create(ClienteVO clienteVO) {
+	public ClienteVO create(ClienteVO clienteVO) {
 		ClienteVO clienteVoRetorno = ClienteVO.create(clienteRepository.save(Cliente.create(clienteVO)));
 		return clienteVoRetorno;
 	}

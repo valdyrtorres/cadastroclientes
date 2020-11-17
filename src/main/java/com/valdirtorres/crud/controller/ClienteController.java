@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.valdirtorres.crud.data.vo.ClienteVO;
@@ -67,6 +68,7 @@ public class ClienteController {
 		return new ResponseEntity<>(pagedModel, HttpStatus.OK);
 	}
 	
+	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping(produces = {"application/json", "application/xml", "application/x-yaml" },
 				 consumes = {"application/json", "application/xml", "application/x-yaml" })
 	public ClienteVO create(@RequestBody ClienteVO clienteVO) {
@@ -83,6 +85,7 @@ public class ClienteController {
 		return cliVo;
 	}
 	
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		clienteService.delete(id);
